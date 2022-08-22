@@ -19,7 +19,7 @@ function start(){
 function draw() {
     image(video, 0, 0, 550, 350);
     if (status) {
-        if (objects[0].label==document.getElementById("object").value){
+        if (objects[0].label=="person"){
             sound.play();
         }
         for(var i=0;i<objects.length;i++){
