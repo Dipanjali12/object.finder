@@ -2,7 +2,7 @@ img = "";
 status = "";
 objectDetector = "";
 objects = [];
-
+sound="";
 
 function setup() {
     canvas = createCanvas(550, 350);
@@ -19,6 +19,9 @@ function start(){
 function draw() {
     image(video, 0, 0, 550, 350);
     if (status) {
+        if (objects[0].label==document.getElementById("object").value){
+            sound.play();
+        }
         for(var i=0;i<objects.length;i++){
         document.getElementById("status").innerHTML = "Status : Object  Detected"
         fill("red");
@@ -29,6 +32,9 @@ function draw() {
         rect(objects[i].x, objects[i].y, objects[i].width, objects[i].height);
         }
     }
+}
+function preload(){
+sound=loadSound("music.mp3")
 }
 
 
